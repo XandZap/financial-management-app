@@ -27,7 +27,7 @@ A personal finance management app built with Next.js, Tailwind CSS, TypeScript, 
 
 2. Navigate to the project directory:
 
-  ```shell
+    ```shell
    cd personal-finance-app
 
     ```
@@ -55,7 +55,7 @@ A personal finance management app built with Next.js, Tailwind CSS, TypeScript, 
 License
 This project is licensed under the MIT License.
 
-```sql
-Remember to replace `{netlify-status-badge-id}`, `{netlify-site-name}`, and other placeholders with the appropriate values specific to your project. Additionally, update the content with relevant information and instructions specific to your project as needed.
-```
+  ```sql
+  Remember to replace `{netlify-status-badge-id}`, `{netlify-site-name}`, and other placeholders with the appropriate values specific to your project. Additionally, update the content with relevant information and instructions specific to your project as needed.
+  ```
 
