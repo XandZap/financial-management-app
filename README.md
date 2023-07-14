@@ -21,14 +21,14 @@ A personal finance management app built with Next.js, Tailwind CSS, TypeScript, 
 1. Clone the repository:
 
    ```shell
-   git clone https://github.com/your-username/personal-finance-app.git
+   git clone https://github.com/XandZap/financial-management-app
 
    ```
 
 2. Navigate to the project directory:
 
     ```shell
-   cd personal-finance-app
+   cd financial-management-app
 
     ```
 
