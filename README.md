@@ -27,28 +27,28 @@ A personal finance management app built with Next.js, Tailwind CSS, TypeScript, 
 
 2. Navigate to the project directory:
 
-```shell
-  cd personal-finance-app
+  ```shell
+   cd personal-finance-app
 
-```
+    ```
 
 3. Install the dependencies:
 
-```shell
-  npm install
-```
+    ```shell
+    npm install
+    ```
 
 4. Set up the environment variables:
 
-.Rename .env.example to .env.local
-.Update the environment variables with your own values
+    .Rename .env.example to .env.local
+    .Update the environment variables with your own values
 
 5. Start the development server:
 
-```shell
-npm run dev
+    ```shell
+    npm run dev
 
-```
+    ```
 
 6. Open your browser and visit http://localhost:3000 to access the app.
 
