@@ -1,3 +1,5 @@
+'use client'
+import { getTransactions } from "@/utils/storageTransactions";
 import ContentName from "../atoms/ContentName";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../ui/card";
 
@@ -6,6 +8,8 @@ interface props {
 }
 
 function Transactions({ className }: props) {
+  const transactions = getTransactions();
+
   return (
     <div className={" flex flex-col " + className}>
       <ContentName>Transações Recentes</ContentName>
@@ -14,14 +18,12 @@ function Transactions({ className }: props) {
           <CardTitle>Todas - Receita - Respesas</CardTitle>
         </CardHeader>
         <CardContent>
-          <p>Item ------------------ R$ Valor</p>
-          <p>Item ------------------ R$ Valor</p>
-          <p>Item ------------------ R$ Valor</p>
-          <p>Item ------------------ R$ Valor</p>
-          <p>Item ------------------ R$ Valor</p>
-          <p>Item ------------------ R$ Valor</p>
-          <p>Item ------------------ R$ Valor</p>
-          <p>Item ------------------ R$ Valor</p>
+          {transactions.map((transaction) => (
+            <div key={transaction.transaction} className="flex justify-between">
+              <span>{transaction.transaction}</span>
+              <span className="text-left">R$ {transaction.value}</span>
+            </div>
+          ))}
         </CardContent>
         <CardFooter>{""}</CardFooter>
       </Card>

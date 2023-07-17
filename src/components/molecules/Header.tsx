@@ -6,9 +6,9 @@ function Header() {
       <div>
         <h1 className="font-bold text-default-black">Bem Vindo</h1>
       </div>
-      <div>
+      {/* <div>
         <Input type="text" placeholder="Buscar" />
-      </div>
+      </div> */}
     </header>
   );
 }

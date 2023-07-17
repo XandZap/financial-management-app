@@ -8,27 +8,27 @@ import { BsPersonCircle } from "react-icons/bs";
 
 function Navbar() {
   return (
-    <div className="flex flex-col bg-zinc-950 text-zinc-50 py-12 px-7 max-lg:hidden">
+    <div className="flex flex-col min-h-screen h-auto  bg-zinc-950 text-zinc-50 py-12 px-7 max-lg:hidden">
       <h1 className="text-center text-2xl font-extrabold">FinançasZap</h1>
 
       <nav className="flex flex-col flex-1 my-12">
-        <NavLink href="#">
+        <NavLink href="/">
           <CiViewList />
           Inicio
         </NavLink>
-        <NavLink href="#">
+        <NavLink href="/saldo">
           <CiWallet />
           Saldos
         </NavLink>
-        <NavLink href="#">
+        <NavLink href="/transacoes">
           <BsArrowLeftRight />
           Transações
         </NavLink>
-        <NavLink href="#">
+        <NavLink href="/conta">
           <LiaMoneyCheckAltSolid />
           Contas
         </NavLink>
-        <NavLink href="#">
+        <NavLink href="/despesa">
           <FaMoneyBillTransfer />
           Despesas
         </NavLink>
