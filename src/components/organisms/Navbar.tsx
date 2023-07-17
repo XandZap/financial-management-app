@@ -4,7 +4,9 @@ import { CiViewList, CiWallet } from "react-icons/ci";
 import { BsArrowLeftRight } from "react-icons/bs";
 import { LiaMoneyCheckAltSolid } from "react-icons/lia";
 import { FaMoneyBillTransfer } from "react-icons/fa6";
-import { BsPersonCircle } from "react-icons/bs";
+import { BsGithub } from "react-icons/bs";
+import Image from "next/image";
+import Link from "next/link";
 
 function Navbar() {
   return (
@@ -35,8 +37,18 @@ function Navbar() {
       </nav>
 
       <div className="flex gap-2 items-center">
-        <BsPersonCircle />
-        <h4>Xand Zap</h4>
+        <Image
+          src="https://github.com/XandZap.png"
+          alt="Imagem do Alexandre"
+          width={30}
+          height={30}
+          className="rounded-full"
+        />
+        <Link href="https://github.com/XandZap" target="_blank">
+          <h4>
+            XandZap<BsGithub />
+          </h4>
+        </Link>
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import Link from "next/link";
 import { useState } from "react";
 import { Button } from "../ui/button";
+import SliderCard from "../ui/Slider";
 
 interface props {
   className?: string;
@@ -13,16 +14,6 @@ const balances = getBalances();
 const totalBalances = balances.reduce((total, balance) => total + Number(balance.amount), 0);
 
 function TotalBalance({ className }: props) {
-  const [balanceIndex, setBalanceIndex] = useState(0);
-
-  const changeBalance = (value: boolean) => {
-    const balancesLength = balances.length - 1;
-    if (value && balancesLength === balanceIndex) setBalanceIndex(0);
-    else if (value && balancesLength !== balanceIndex) setBalanceIndex(balanceIndex + 1);
-    else if (!value && balanceIndex === 0) setBalanceIndex(balancesLength);
-    else setBalanceIndex(balanceIndex - 1);
-  };
-
   return (
     <div className={" flex flex-col " + className}>
       <ContentName>Saldo Geral</ContentName>
@@ -34,26 +25,21 @@ function TotalBalance({ className }: props) {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <Card className=" bg-primary/50 ">
-            <CardHeader>
-              <CardTitle>{balances[balanceIndex].accountName}</CardTitle>
-              <CardDescription>{translateBalanceType(balances[balanceIndex].category)}</CardDescription>
-            </CardHeader>
-            <CardFooter className="font-bold">{convertStringToReal(balances[balanceIndex].amount)}</CardFooter>
-          </Card>
+          <SliderCard>
+            {balances.map((balance) => (
+              <Card key={balance.accountName} className=" bg-primary/50 w-full max-w-full max-h-full m-auto">
+                <CardHeader>
+                  <CardTitle>{balance.accountName}</CardTitle>
+                  <CardDescription>{translateBalanceType(balance.category)}</CardDescription>
+                </CardHeader>
+                <CardFooter className="font-bold">{convertStringToReal(balance.amount)}</CardFooter>
+              </Card>
+            ))}
+          </SliderCard>
         </CardContent>
-        <CardFooter className="flex justify-around">
-          <Button className="bg-primary" onClick={() => changeBalance(false)}>
-            {"<-"}
-          </Button>
-          <Button className="bg-primary" onClick={() => changeBalance(true)}>
-            {"->"}
-          </Button>
-        </CardFooter>
       </Card>
     </div>
   );
 }
 
 export default TotalBalance;
-
