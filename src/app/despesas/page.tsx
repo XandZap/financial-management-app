@@ -1,7 +1,10 @@
 "use client";
 import { useState } from "react";
-import ContentName from "@/components/atoms/ContentName";
-import { Button } from "@/components/ui/button";
+import { format } from "date-fns";
+import { ptBR } from "date-fns/locale";
+
+import { ContentName } from "@/components/atoms";
+import { AddBill } from "@/components/molecules";
 import {
   Table,
   TableBody,
@@ -10,13 +13,12 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import { Card } from "@/components/ui/card";
+  Button,
+  Card,
+} from "@/components/ui";
+
 import { getBills } from "@/utils/storageFunctions/storageBills";
 import { convertStringToReal } from "@/utils";
-import { AddBill } from "@/components/molecules";
-import { format } from "date-fns";
-import { ptBR } from "date-fns/locale";
 
 function Bills() {
   const [isOpen, setIsOpen] = useState<boolean>(false);

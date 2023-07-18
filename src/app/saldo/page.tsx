@@ -1,9 +1,8 @@
 "use client";
 import { useState } from "react";
-import ContentName from "@/components/atoms/ContentName";
-import AddBalance from "@/components/molecules/AddBalance";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { ContentName } from "@/components/atoms";
+import { AddBalance } from "@/components/molecules";
+import { Button, Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui";
 import { convertStringToReal, getBalances, translateBalanceType } from "@/utils";
 
 function Balances() {

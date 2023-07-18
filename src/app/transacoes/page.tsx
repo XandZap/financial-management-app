@@ -1,9 +1,10 @@
 "use client";
 import { useState } from "react";
-import ContentName from "@/components/atoms/ContentName";
-import AddTransaction from "@/components/molecules/AddTransaction";
-import { Button } from "@/components/ui/button";
+
+import { ContentName } from "@/components/atoms";
+import { AddTransaction } from "@/components/molecules";
 import {
+  Button,
   Table,
   TableBody,
   TableCaption,
@@ -11,8 +12,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import { Card } from "@/components/ui/card";
+  Card,
+} from "@/components/ui";
 import { getTransactions, translateTransactionCategory, translateTransactionPayment } from "@/utils";
 
 function Transações() {

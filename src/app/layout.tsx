@@ -1,8 +1,9 @@
-import Navbar from "@/components/organisms/Navbar";
-import "./globals.css";
 import type { Metadata } from "next";
+import "./globals.css";
 import { Inter } from "next/font/google";
-import Header from "@/components/molecules/Header";
+
+import { Navbar } from "@/components/organisms/";
+import { Header } from "@/components/molecules";
 
 const inter = Inter({ subsets: ["latin"] });
 

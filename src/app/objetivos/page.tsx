@@ -1,8 +1,11 @@
 "use client";
 import { useState } from "react";
-import ContentName from "@/components/atoms/ContentName";
-import { Button } from "@/components/ui/button";
+import { AiFillCheckCircle, AiOutlineCloseCircle } from "react-icons/ai";
+
+import { ContentName } from "@/components/atoms";
 import {
+  Button,
+  Card,
   Table,
   TableBody,
   TableCaption,
@@ -10,11 +13,9 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
-import { Card } from "@/components/ui/card";
+} from "@/components/ui";
 import { AddGoal } from "@/components/molecules";
 import { getGoals } from "@/utils/storageFunctions/storageGoals";
-import { AiFillCheckCircle, AiOutlineCloseCircle } from "react-icons/ai";
 import { convertStringToReal } from "@/utils";
 
 function Goals() {
@@ -48,7 +49,11 @@ function Goals() {
                 <TableCell className="font-medium">{convertStringToReal(goal.monthTotal)}</TableCell>
                 <TableCell className="font-medium">{convertStringToReal(goal.achieved)}</TableCell>
                 <TableCell>
-                  {goal.achieved >= goal.monthTotal ? <AiFillCheckCircle className="text-primary"/> : <AiOutlineCloseCircle className="text-red-700"/>}
+                  {goal.achieved >= goal.monthTotal ? (
+                    <AiFillCheckCircle className="text-primary" />
+                  ) : (
+                    <AiOutlineCloseCircle className="text-red-700" />
+                  )}
                 </TableCell>
               </TableRow>
             ))}
