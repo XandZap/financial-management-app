@@ -23,7 +23,7 @@ function TotalBalance({ className }: props) {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <SliderCard>
+          {/* <SliderCard>
             {balances.map((balance) => (
               <Card key={balance.accountName} className=" bg-primary/50 w-full max-w-full max-h-full m-auto">
                 <CardHeader>
@@ -33,7 +33,7 @@ function TotalBalance({ className }: props) {
                 <CardFooter className="font-bold">{convertStringToReal(balance.amount)}</CardFooter>
               </Card>
             ))}
-          </SliderCard>
+          </SliderCard> */}
         </CardContent>
       </Card>
     </div>

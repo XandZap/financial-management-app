@@ -17,3 +17,10 @@ export type IGoal = {
   achieved: number;
   month: string;
 };
+
+export type IBills = {
+  date: string;
+  title: string;
+  category: string;
+  value: number;
+};

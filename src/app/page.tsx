@@ -8,7 +8,6 @@ export default function Home() {
       <UpcomingBills />
       <Transactions className="row-span-2" />
       <UpcomingBills className="col-span-2 max-md:col-span-1" />
-      <UpcomingBills className="col-span-2 max-md:col-span-1" />
     </div>
   );
 }

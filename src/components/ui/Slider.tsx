@@ -9,7 +9,7 @@ type props = {
 export default function SliderCard({ children }: props) {
   useEffect(() => {
     const slider = new Glide(".glide-06", {
-      type: "slider",
+      type: "carousel",
       focusAt: "center",
       perView: 1,
       autoplay: 3000,

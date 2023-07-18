@@ -1,7 +1,9 @@
-'use client'
+"use client";
 import { getTransactions } from "@/utils/storageFunctions/storageTransactions";
 import ContentName from "../atoms/ContentName";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../ui/card";
+import { convertStringToReal } from "@/utils";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../ui/table";
 
 interface props {
   className?: string;
@@ -14,18 +16,24 @@ function Transactions({ className }: props) {
     <div className={" flex flex-col " + className}>
       <ContentName>Transações Recentes</ContentName>
       <Card className=" px-3 py-2 h-full">
-        <CardHeader className=" flex flex-row justify-between">
-          <CardTitle>Todas - Receita - Respesas</CardTitle>
-        </CardHeader>
-        <CardContent>
-          {transactions.map((transaction) => (
-            <div key={transaction.transaction} className="flex justify-between">
-              <span>{transaction.transaction}</span>
-              <span className="text-left">R$ {transaction.value}</span>
-            </div>
-          ))}
+        <CardContent className="p-0">
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Transação</TableHead>
+                <TableHead>Valor</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {transactions.map((transaction) => (
+                <TableRow key={transaction.transaction} className=" text-default-black/80">
+                  <TableCell className="font-semibold">{transaction.transaction}</TableCell>
+                  <TableCell className="">{convertStringToReal(transaction.value)}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
         </CardContent>
-        <CardFooter>{""}</CardFooter>
       </Card>
     </div>
   );

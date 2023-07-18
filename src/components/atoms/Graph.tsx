@@ -1,7 +1,7 @@
 import { PieChart, Pie, Cell } from "recharts";
 
 interface props {
-  achieved?: number;
+  achieved: number | 0;
   monthTotal: number;
 }
 
@@ -52,8 +52,8 @@ const needle = (
 
 function Graph({ achieved, monthTotal }: props) {
   const data = [
-    { name: "achieved", value: achieved || 0, color: "#299D91" },
-    { name: "monthTotal", value: monthTotal, color: "#E8E8E8" },
+    { name: "achieved", value: achieved, color: "#299D91" },
+    { name: "monthTotal", value: monthTotal - achieved, color: "#E8E8E8" },
   ];
   return (
     <PieChart height={120} width={250} className=" h-full w-full">

@@ -1,10 +1,12 @@
 import React from "react";
 import NavLink from "../atoms/NavLink";
+
 import { CiViewList, CiWallet } from "react-icons/ci";
 import { BsArrowLeftRight } from "react-icons/bs";
-import { LiaMoneyCheckAltSolid } from "react-icons/lia";
 import { FaMoneyBillTransfer } from "react-icons/fa6";
 import { BsGithub } from "react-icons/bs";
+import { TbTargetArrow } from "react-icons/tb";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -26,11 +28,11 @@ function Navbar() {
           <BsArrowLeftRight />
           Transações
         </NavLink>
-        <NavLink href="/conta">
-          <LiaMoneyCheckAltSolid />
-          Contas
+        <NavLink href="/objetivos">
+          <TbTargetArrow />
+          Objetivos
         </NavLink>
-        <NavLink href="/despesa">
+        <NavLink href="/despesas">
           <FaMoneyBillTransfer />
           Despesas
         </NavLink>
@@ -46,7 +48,8 @@ function Navbar() {
         />
         <Link href="https://github.com/XandZap" target="_blank">
           <h4>
-            XandZap<BsGithub />
+            XandZap
+            <BsGithub />
           </h4>
         </Link>
       </div>
