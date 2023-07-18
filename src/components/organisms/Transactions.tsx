@@ -1,5 +1,5 @@
 'use client'
-import { getTransactions } from "@/utils/storageTransactions";
+import { getTransactions } from "@/utils/storageFunctions/storageTransactions";
 import ContentName from "../atoms/ContentName";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../ui/card";
 

@@ -12,3 +12,8 @@ export type IBalance = {
   category: string;
 };
 
+export type IGoal = {
+  monthTotal: number;
+  achieved: number;
+  month: string;
+};

@@ -1,6 +1,6 @@
 "use client";
 
-import { IBalance } from "./types";
+import { IBalance } from "../types";
 
 const key = "balance";
 

@@ -3,8 +3,6 @@ import { convertStringToReal, getBalances, translateBalanceType } from "@/utils"
 import ContentName from "../atoms/ContentName";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../ui/card";
 import Link from "next/link";
-import { useState } from "react";
-import { Button } from "../ui/button";
 import SliderCard from "../ui/Slider";
 
 interface props {
@@ -17,7 +15,7 @@ function TotalBalance({ className }: props) {
   return (
     <div className={" flex flex-col " + className}>
       <ContentName>Saldo Geral</ContentName>
-      <Card className=" px-3 py-2">
+      <Card className=" px-3 py-2 h-full ">
         <CardHeader className=" flex flex-row justify-between">
           <CardTitle>{convertStringToReal(totalBalances)}</CardTitle>
           <CardDescription>

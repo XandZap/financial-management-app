@@ -1,6 +1,6 @@
 "use client";
 
-import { ITransaction } from "./types";
+import { ITransaction } from "../types";
 
 const key = "transaction";
 

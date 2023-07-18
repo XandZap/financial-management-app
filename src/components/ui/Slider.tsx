@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
 import Glide from "@glidejs/glide";
-import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 
 type props = {
   children: React.ReactNode;
@@ -16,11 +15,6 @@ export default function SliderCard({ children }: props) {
       autoplay: 3000,
       animationDuration: 700,
       gap: 0,
-      // classes: {
-      //   nav: {
-      //     active: "[&>*]:bg-wuiSlate-700",
-      //   },
-      // },
     }).mount();
 
     return () => {
@@ -36,22 +30,6 @@ export default function SliderCard({ children }: props) {
             {children}
           </ul>
         </div>
-        {/* <div className="absolute bottom-2 flex items-center justify-between w-full " data-glide-el="controls">
-          <button
-            className="inline-flex items-center justify-center w-8 h-8 transition duration-300  text-slate-700 hover:border-slate-900 hover:text-slate-900 focus-visible:outline-none lg:h-12 lg:w-12"
-            data-glide-dir="<"
-            aria-label="prev slide"
-          >
-            <BsArrowLeft />
-          </button>
-          <button
-            className="inline-flex items-center justify-center w-8 h-8 transition duration-300  text-slate-700 hover:border-slate-900 hover:text-slate-900 focus-visible:outline-none lg:h-12 lg:w-12"
-            data-glide-dir=">"
-            aria-label="next slide"
-          >
-            <BsArrowRight />
-          </button>
-        </div> */}
 
         <div
           className="absolute bottom-0 flex items-center justify-center w-full gap-2"

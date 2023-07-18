@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
 import { Card, CardFooter } from "../ui/card";
-import { getBalances, setBalance } from "@/utils/storageBalances";
+import { getBalances, setBalance } from "@/utils/storageFunctions/storageBalances";
 
 const formSchema = z.object({
   accountName: z.string().min(2, {
