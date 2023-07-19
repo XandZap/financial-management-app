@@ -10,6 +10,7 @@ export type IBalance = {
   accountName: string;
   amount: string;
   category: string;
+  month: string;
 };
 
 export type IGoal = {
@@ -24,3 +25,4 @@ export type IBills = {
   category: string;
   value: number;
 };
+

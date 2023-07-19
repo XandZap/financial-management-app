@@ -9,6 +9,7 @@ import { useForm } from "react-hook-form";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
 import { Card, CardFooter } from "../ui/card";
 import { getBalances, setBalance } from "@/utils/storageFunctions/storageBalances";
+import { format } from "date-fns";
 
 const formSchema = z.object({
   accountName: z.string().min(2, {
@@ -32,6 +33,8 @@ interface props {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
+const month = format(new Date(), "MMM");
+
 function AddBalance({ setIsOpen }: props) {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -45,14 +48,14 @@ function AddBalance({ setIsOpen }: props) {
   function onSubmit(values: z.infer<typeof formSchema>) {
     const balances = getBalances();
 
-    balances.push(values);
+    balances.push({ ...values, month });
 
     setBalance(balances);
     setIsOpen(false);
   }
 
   return (
-    <div className="absolute bg-zinc-800/60 top-0 left-0 flex justify-center items-center h-screen w-screen">
+    <div className="absolute z-50 bg-zinc-800/60 top-0 left-0 flex justify-center items-center h-full w-full">
       <Card className="relative p-4 w-1/2 max-md:w-11/12">
         <Button
           className=" absolute bg-transparent w-2 h-7 hover:bg-default-black/50 hover:text-zinc-50 text-zinc-500 right-1 top-1"

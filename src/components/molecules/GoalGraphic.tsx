@@ -1,5 +1,4 @@
-import { convertStringToReal } from "@/utils";
-import Graph from "../atoms/Graph";
+import { Graph } from "../atoms";
 
 interface props {
   achieved: number | 0;

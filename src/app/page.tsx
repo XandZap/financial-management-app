@@ -1,4 +1,4 @@
-import { Goals, TotalBalance, Transactions, UpcomingBills } from "@/components/organisms";
+import { Goals, Statistics, TotalBalance, Transactions, UpcomingBills } from "@/components/organisms";
 
 export default function Home() {
   return (
@@ -7,7 +7,7 @@ export default function Home() {
       <Goals />
       <UpcomingBills />
       <Transactions className="row-span-2" />
-      <UpcomingBills className="col-span-2 max-md:col-span-1" />
+      <Statistics className="col-span-2 max-md:col-span-1" />
     </div>
   );
 }

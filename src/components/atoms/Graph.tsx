@@ -1,3 +1,4 @@
+'use client'
 import { PieChart, Pie, Cell } from "recharts";
 
 interface props {
