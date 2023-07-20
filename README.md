@@ -2,6 +2,14 @@
 
 A personal finance management app built with Next.js, Tailwind CSS, TypeScript, and Shadcn UI. The app helps users track their expenses, manage budgets, and gain better control over their personal finances.
 
+## Design
+
+The design of this project was inspired by the [Finebank - Financial Management Dashboard UI Kits (Community)](https://www.figma.com/file/WqXrcFY6sntnjY9O8N3Yk5/Finebank---Financial-Management-Dashboard-UI-Kits-(Community)). A special thanks to the community for providing this amazing resource.
+
+## Live Demo
+
+Check out the app in action at [financaszap.vercel.app](https://financaszap.vercel.app/).
+
 ## Features
 
 - Expense tracking: Add, categorize, and track expenses
@@ -14,7 +22,10 @@ A personal finance management app built with Next.js, Tailwind CSS, TypeScript, 
 - [Next.js](https://nextjs.org/) - React framework for server-side rendering and static site generation
 - [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
 - [TypeScript](https://www.typescriptlang.org/) - Typed superset of JavaScript
-- [Shadcn UI](https://shadcn-ui.vercel.app/) - UI components library for Next.js
+- [Recharts](http://recharts.org/) - Composable charting library built on React components
+- [Date-fns](https://date-fns.org/) - Modern JavaScript date utility library
+- [Radix UI](https://www.radix-ui.com/) - Modular and accessible UI components library for React
+- [Flowbite](https://flowbite.com/) - Modern and beautiful UI toolkit
 
 ## Getting Started
 
