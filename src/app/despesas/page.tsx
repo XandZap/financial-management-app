@@ -46,7 +46,7 @@ function Bills() {
           </TableHeader>
           <TableBody>
             {bills.map((bill) => (
-              <TableRow key={bill.title}>
+              <TableRow key={bill.title + bill.value + bill.date}>
                 <TableCell className="font-medium">
                   {format(new Date(bill.date), "PP", { locale: ptBR })}
                 </TableCell>

@@ -20,7 +20,7 @@ function Balances() {
       </div>
       <div className="grid grid-cols-4 mx-10 gap-8 max-lg:grid-cols-2 max-md:grid-cols-1">
         {balances.map((balance) => (
-          <Card key={balance.accountName}>
+          <Card key={balance.accountName + balance.amount + balance.category}>
             <CardHeader>
               <CardTitle>{balance.accountName}</CardTitle>
             </CardHeader>

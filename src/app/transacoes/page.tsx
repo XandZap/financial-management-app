@@ -43,7 +43,7 @@ function Transações() {
           </TableHeader>
           <TableBody>
             {transactions.map((transaction) => (
-              <TableRow key={transaction.transaction}>
+              <TableRow key={transaction.transaction + transaction.category + transaction.value}>
                 <TableCell className="font-medium">{transaction.transaction}</TableCell>
                 <TableCell>{transaction.place}</TableCell>
                 <TableCell>{translateTransactionPayment(transaction.payment)}</TableCell>

@@ -44,7 +44,7 @@ function Goals() {
           </TableHeader>
           <TableBody>
             {goals.map((goal) => (
-              <TableRow key={goal.month}>
+              <TableRow key={goal.month + goal.achieved + goal.monthTotal}>
                 <TableCell className="font-medium">{goal.month}</TableCell>
                 <TableCell className="font-medium">{convertStringToReal(goal.monthTotal)}</TableCell>
                 <TableCell className="font-medium">{convertStringToReal(goal.achieved)}</TableCell>
