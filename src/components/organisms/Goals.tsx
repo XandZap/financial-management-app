@@ -12,6 +12,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui
 
 import { getGoals } from "@/utils/storageFunctions/storageGoals";
 import { convertStringToReal } from "@/utils";
+import EmptyAlert from "../atoms/EmptyAlert";
 
 interface props {
   className?: string;
@@ -44,22 +45,19 @@ function Goals({ className }: props) {
 
         <hr />
         <CardContent className=" p-0">
-          <div className="flex justify-between items-center py-4 max-sm:flex-col">
-            <div className="flex flex-col gap-4">
-              <GoalTarget title="Meta alcançada" value={monthGoal?.achieved} Icon={LiaAwardSolid} />
-              <GoalTarget title="Meta do mês" value={monthGoal?.monthTotal} Icon={TbTargetArrow} />
-            </div>
-
-            {monthGoal?.monthTotal ? (
-              <GoalGraphic achieved={monthGoal?.achieved} monthTotal={monthGoal?.monthTotal} />
-            ) : (
-              <div className="flex flex-col justify-center items-center">
-                <p className="text-center text-default-black/80">Adicione o valor da sua meta mensal</p>
-                <Button onClick={() => setIsOpen(true)}>Adicionar</Button>
+          {monthGoal?.monthTotal ? (
+            <div className="flex justify-between items-center py-4 max-sm:flex-col">
+              <div className="flex flex-col gap-4">
+                <GoalTarget title="Meta alcançada" value={monthGoal?.achieved} Icon={LiaAwardSolid} />
+                <GoalTarget title="Meta do mês" value={monthGoal?.monthTotal} Icon={TbTargetArrow} />
               </div>
-            )}
-            {isOpen && <AddGoal setIsOpen={setIsOpen} />}
-          </div>
+
+              <GoalGraphic achieved={monthGoal?.achieved} monthTotal={monthGoal?.monthTotal} />
+            </div>
+          ) : (
+            <EmptyAlert href="/objetivos">Clique aqui para adicionar o valor da sua meta mensal</EmptyAlert>
+          )}
+          {isOpen && <AddGoal setIsOpen={setIsOpen} />}
         </CardContent>
       </Card>
     </div>

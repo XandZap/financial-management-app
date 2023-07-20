@@ -8,6 +8,7 @@ import { useState } from "react";
 import { Button } from "../ui";
 import { BiPlusCircle } from "react-icons/bi";
 import { AddTransaction } from "../molecules";
+import EmptyAlert from "../atoms/EmptyAlert";
 
 interface props {
   className?: string;
@@ -40,12 +41,16 @@ function Transactions({ className }: props) {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {transactions.map((transaction) => (
-                <TableRow key={transaction.transaction} className=" text-default-black/80">
-                  <TableCell className="font-semibold">{transaction.transaction}</TableCell>
-                  <TableCell className="">{convertStringToReal(transaction.value)}</TableCell>
-                </TableRow>
-              ))}
+              {transactions.length > 0 ? (
+                transactions.map((transaction) => (
+                  <TableRow key={transaction.transaction} className=" text-default-black/80">
+                    <TableCell className="font-semibold">{transaction.transaction}</TableCell>
+                    <TableCell className="">{convertStringToReal(transaction.value)}</TableCell>
+                  </TableRow>
+                ))
+              ) : (
+                <EmptyAlert href="/transacoes">Adicione suas transações recentes</EmptyAlert>
+              )}
             </TableBody>
           </Table>
         </CardContent>

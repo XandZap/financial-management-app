@@ -12,8 +12,8 @@ function GoalGraphic({ achieved, monthTotal }: props) {
         {monthTotal && <Graph achieved={achieved} monthTotal={monthTotal} />}
         <div className="text-xs text-center flex justify-around">
           <span>R$ 0</span>
-          <span>R${achieved > 999 ? achieved / 100 + "K" : achieved}</span>
-          <span>R${monthTotal > 999 ? monthTotal / 100 + "K" : monthTotal}</span>
+          <span>R${achieved > 999 ? (achieved / 1000).toFixed(1) + "K" : achieved}</span>
+          <span>R${monthTotal > 999 ? (monthTotal / 1000).toFixed(1) + "K" : monthTotal}</span>
         </div>
       </div>
       <p className="font-bold text-center">Alcançado Vs Alvo</p>

@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { PieChart, Pie, Cell } from "recharts";
 
 interface props {
@@ -54,7 +54,7 @@ const needle = (
 function Graph({ achieved, monthTotal }: props) {
   const data = [
     { name: "achieved", value: achieved, color: "#299D91" },
-    { name: "monthTotal", value: monthTotal - achieved, color: "#E8E8E8" },
+    { name: "monthTotal", value: monthTotal - achieved > 0 ? monthTotal - achieved : 0, color: "#E8E8E8" },
   ];
   return (
     <PieChart height={120} width={250} className=" h-full w-full">

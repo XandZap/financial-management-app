@@ -29,6 +29,13 @@ function Balances() {
           </Card>
         ))}
       </div>
+      {balances.length === 0 && (
+        <div className="flex justify-center items-center">
+          <Button className=" bg-primary" onClick={() => setIsOpen(true)}>
+            Adicione uma conta
+          </Button>
+        </div>
+      )}
       {isOpen && <AddBalance setIsOpen={setIsOpen} />}
     </>
   );

@@ -8,6 +8,7 @@ import { BiEdit } from "react-icons/bi";
 import { useState } from "react";
 import { AddBill } from "../molecules";
 import Link from "next/link";
+import EmptyAlert from "../atoms/EmptyAlert";
 
 interface props {
   className?: string;
@@ -30,11 +31,17 @@ function UpcomingBills({ className }: props) {
             <BiEdit className="text-sm" />
           </Button>
         </div>
-        <Link href='/despesas' className=" text-base mr-3">Ver Mais</Link>
+        <Link href="/despesas" className=" text-base mr-3">
+          Ver Mais
+        </Link>
       </ContentName>
 
       <Card className=" px-3 py-2 h-full">
-        {bills.map((bill, index) => index < 3 && <Bill key={bill.title} bill={bill} />)}
+        {bills.length > 0 ? (
+          bills.map((bill, index) => index < 3 && <Bill key={bill.title} bill={bill} />)
+        ) : (
+          <EmptyAlert href="/despesas">Clique aqui para adicionar suas próximas contas</EmptyAlert>
+        )}
       </Card>
       {isOpen && <AddBill setIsOpen={setIsOpen} />}
     </div>

@@ -97,6 +97,7 @@ function AddBalance({ setIsOpen }: props) {
                     <SelectContent>
                       <SelectItem value="bank">Banco</SelectItem>
                       <SelectItem value="investment">Investimento</SelectItem>
+                      <SelectItem value="other">Outro</SelectItem>
                     </SelectContent>
                   </Select>
                   <FormMessage />

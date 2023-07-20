@@ -2,6 +2,7 @@ export const translateBalanceType = (category: string): string => {
   const balanceTypes: { [key: string]: string } = {
     bank: "Banco",
     investment: "Investimento",
+    other: "Outro",
   };
 
   return balanceTypes[category];
