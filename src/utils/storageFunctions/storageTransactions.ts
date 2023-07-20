@@ -5,17 +5,23 @@ import { ITransaction } from "../types";
 const key = "transaction";
 
 export const setTransaction = (value: ITransaction[]) => {
-  const setValue = JSON.stringify(value);
-  localStorage.setItem(key, setValue);
+  if (typeof window !== "undefined") {
+    const setValue = JSON.stringify(value);
+    localStorage.setItem(key, setValue);
+  }
 };
 
 export const getTransactions = (): ITransaction[] => {
-  const transactions = localStorage.getItem(key);
-  if (transactions) return JSON.parse(transactions);
-  else return [];
+  if (typeof window !== "undefined") {
+    const transactions = localStorage.getItem(key);
+    if (transactions) return JSON.parse(transactions);
+    else return [];
+  } else return [];
 };
 
 export const removeTransaction = () => {
-  localStorage.removeItem(key);
+  if (typeof window !== "undefined") {
+    localStorage.removeItem(key);
+  }
 };
 

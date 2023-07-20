@@ -5,17 +5,23 @@ import { IBills } from "../types";
 const key = "bill";
 
 export const setBill = (value: IBills[]) => {
-  const setValue = JSON.stringify(value);
-  localStorage.setItem(key, setValue);
+  if (typeof window !== "undefined") {
+    const setValue = JSON.stringify(value);
+    localStorage.setItem(key, setValue);
+  }
 };
 
 export const getBills = (): IBills[] => {
-  const bills = localStorage.getItem(key);
-  if (bills) return JSON.parse(bills);
-  else return [];
+  if (typeof window !== "undefined") {
+    const bills = localStorage.getItem(key);
+    if (bills) return JSON.parse(bills);
+    else return [];
+  } else return [];
 };
 
 export const removeBill = () => {
-  localStorage.removeItem(key);
+  if (typeof window !== "undefined") {
+    localStorage.removeItem(key);
+  }
 };
 

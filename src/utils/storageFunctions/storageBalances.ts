@@ -5,17 +5,23 @@ import { IBalance } from "../types";
 const key = "balance";
 
 export const setBalance = (value: IBalance[]) => {
-  const setValue = JSON.stringify(value);
-  localStorage.setItem(key, setValue);
+  if (typeof window !== "undefined") {
+    const setValue = JSON.stringify(value);
+    localStorage.setItem(key, setValue);
+  }
 };
 
 export const getBalances = (): IBalance[] => {
-  const balances = localStorage.getItem(key);
-  if (balances) return JSON.parse(balances);
-  else return [];
+  if (typeof window !== "undefined") {
+    const balances = localStorage.getItem(key);
+    if (balances) return JSON.parse(balances);
+    else return [];
+  } else return [];
 };
 
 export const removeBalance = () => {
-  localStorage.removeItem(key);
+  if (typeof window !== "undefined") {
+    localStorage.removeItem(key);
+  }
 };
 
