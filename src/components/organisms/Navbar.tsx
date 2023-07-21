@@ -1,14 +1,11 @@
 import React from "react";
 import NavLink from "../atoms/NavLink";
 
-import { CiViewList, CiWallet } from "react-icons/ci";
-import { BsArrowLeftRight } from "react-icons/bs";
-import { FaMoneyBillTransfer } from "react-icons/fa6";
 import { BsGithub } from "react-icons/bs";
-import { TbTargetArrow } from "react-icons/tb";
 
 import Image from "next/image";
 import Link from "next/link";
+import { navigationNames } from "@/utils/navigationNames";
 
 function Navbar() {
   return (
@@ -16,26 +13,12 @@ function Navbar() {
       <h1 className="text-center text-2xl font-extrabold">FinançasZap</h1>
 
       <nav className="flex flex-col flex-1 my-12">
-        <NavLink href="/">
-          <CiViewList />
-          Inicio
-        </NavLink>
-        <NavLink href="/saldo">
-          <CiWallet />
-          Saldos
-        </NavLink>
-        <NavLink href="/transacoes">
-          <BsArrowLeftRight />
-          Transações
-        </NavLink>
-        <NavLink href="/objetivos">
-          <TbTargetArrow />
-          Objetivos
-        </NavLink>
-        <NavLink href="/despesas">
-          <FaMoneyBillTransfer />
-          Despesas
-        </NavLink>
+        {navigationNames.map((navigation) => (
+          <NavLink href={navigation.href} key={navigation.name}>
+            {navigation.icon({})}
+            {navigation.name}
+          </NavLink>
+        ))}
       </nav>
 
       <div className="flex gap-2 items-center">

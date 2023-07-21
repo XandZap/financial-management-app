@@ -1,9 +1,11 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+
 import { Button, Card, CardContent } from "../ui";
+import { HamburgerNavigation } from "../atoms";
 import { setRandomBalances } from "@/utils/randomValues/randomBalances";
 import { setRandomGoals } from "@/utils/randomValues/randomGoals";
-import { useRouter } from "next/navigation";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,9 +23,10 @@ function Header() {
       <div>
         <h1 className="font-bold text-default-black">Bem Vindo</h1>
       </div>
-      <div>
-        <Button onClick={() => setIsOpen(true)}>Gere dados automaticamente</Button>
-      </div>
+      <Button onClick={() => setIsOpen(true)} className=" max-md:text-xs max-md:p-1">
+        Gere dados automaticamente
+      </Button>
+      <HamburgerNavigation />
       {isOpen && (
         <div className=" absolute top-0 left-0 bg-default-black/20 flex items-center justify-center h-full w-full z-50">
           <Card>

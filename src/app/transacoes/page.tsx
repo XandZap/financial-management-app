@@ -29,7 +29,7 @@ function Transações() {
           Adicionar
         </Button>
       </div>
-      <Card className=" mx-10 min-h-[500px] max-md:min-h-full">
+      <Card className=" mx-10 min-h-[500px] max-md:min-h-full max-md:mx-0">
         <Table className=" ">
           {transactions.length <= 0 && <TableCaption>Lista de transações realizadas.</TableCaption>}
           <TableHeader>
